@@ -1,0 +1,22 @@
+{
+    "pluginName": {
+        "default": "kdsToolAsset",
+        "zh_CN": "kdsToolAsset",
+        "en_US": "kdsToolAsset",
+        "zh_TW": "kdsToolAsset",
+        "en_CN": "kdsToolAsset",
+        "es_ES": "kdsToolAsset",
+        "ar_EG": "kdsToolAsset",
+        "fr_FR": "kdsToolAsset",
+        "de_DE": "kdsToolAsset",
+        "ru_RU": "kdsToolAsset",
+        "ja_JP": "kdsToolAsset",
+        "ko_KR": "kdsToolAsset",
+        "it_IT": "kdsToolAsset",
+        "th_TH": "kdsToolAsset",
+        "pt_PT": "kdsToolAsset",
+        "id_ID": "kdsToolAsset",
+        "ro_RO": "kdsToolAsset",
+        "pl_PL": "kdsToolAsset"
+    }
+}
