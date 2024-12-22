@@ -18,19 +18,7 @@ export class AlignTool implements KTool {
     private stage: Stage = Stage.PickUpModel;
     private model?: ModelType;
     private targetModel?: ModelType;
-    // private pathPointPoses: PathPointPose[] = [];
-    // private totalLength: number = 0;
     onToolActive(): void {
-        // const selection = app.getSelection();
-        // const toolHelper = app.getToolHelper();
-        // toolHelper.enablePicking(true);
-        // toolHelper.setDefaultSelectBehavior(KSelectBehavior.ADD);
-        // const allEntities = selection.getAllEntities();
-        // if (allEntities.length === 1 && (isKGroupInstance(allEntities[0]) || isKFace(allEntities[0]))) {
-        //     this.model = allEntities[0];
-        // } else {
-        //     selection.clear();
-        // }
     }
 
     onToolDeactive(): void {
@@ -38,9 +26,6 @@ export class AlignTool implements KTool {
         this.tryCommit();
         pluginUI.postMessage({ type: 'leaveAlignTool' }, '*');
         this.clear();
-        // const toolHelper = app.getToolHelper();
-        // toolHelper.enablePicking(false);
-        // toolHelper.setDefaultSelectBehavior(KSelectBehavior.REPLACE);
     }
     onMouseMove(event: KMouseEvent, inferenceResult?: KInferenceResult): void {
         const entity = inferenceResult?.entity;
@@ -265,6 +250,7 @@ export class AlignTool implements KTool {
 
             }
         }
+
         if (curModel?.tempShapeId) {
             appView.clearTemporaryShapesByIds([curModel.tempShapeId]);
         }

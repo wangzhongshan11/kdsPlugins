@@ -1,5 +1,7 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const svgoConfig = require('./svgo-config.json');
+
 module.exports = (env, argv) => ({
     mode: 'development',
     devtool: "inline-source-map",
@@ -22,7 +24,15 @@ module.exports = (env, argv) => ({
             { test: /\.css$/, use: ['style-loader', { loader: 'css-loader' }] },
 
             // 在HTML代码中使用require，例如"<%= require('./file.svg') %>， 从而获得一个data URI。
-            { test: /\.(png|jpg|gif|webp|svg)$/, use: [{ loader: 'url-loader', options: { esModule: false } }] },
+            
+            { test: /\.(png|jpg|gif|webp)$/, use: [{ loader: 'url-loader', options: { esModule: false } }] },
+            {
+                test: /\.svg$/,
+                use: [
+                    'svg-sprite-loader',
+                    { loader: 'svgo-loader', options: JSON.stringify(svgoConfig) }
+                ],
+            },
         ],
     },
 

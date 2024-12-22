@@ -40,6 +40,9 @@ export function isKArc3d(entity: KBoundedCurve3d | undefined | null): entity is 
 }
 
 export function groupFacesByConnection(faces: KFace[]) {
+    if (faces.length < 1) {
+        return [];
+    }
     if (faces.length < 2) {
         return [faces];
     }
